@@ -16,3 +16,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.19.0")
 }
+
+tasks.test {
+    useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
+}
